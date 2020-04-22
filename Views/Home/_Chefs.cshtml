@@ -1,0 +1,15 @@
+<table class="table table-striped">
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th># of Dishes</th>
+    </tr>
+    @foreach (var chef in ViewBag.AllChefs)
+    {
+        <tr>
+            <td>@chef.FirstName @chef.LastName</td>
+            <td>@chef.getAge()</td>
+            <td>@chef.ChefDishes.Count</td>
+        </tr>
+    }
+</table>

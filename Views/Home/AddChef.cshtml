@@ -1,0 +1,34 @@
+@model Chef
+@{
+    ViewData["Title"] = "New Dish";
+}
+
+<h1 class="display-4">Add a Chef!</h1>
+<hr/>
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="AddChefToDB" asp-controller="Home" method="post" class="form align-items-center">
+            <div class="form-group">
+                <label asp-for="FirstName"></label>
+                <span class="text-danger font-weight-bold" asp-validation-for="FirstName"></span>
+                <input class="form-control" asp-for="FirstName" />
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName"></label>
+                <span class="text-danger font-weight-bold" asp-validation-for="LastName"></span>
+                <input class="form-control" asp-for="LastName" />
+            </div>
+            <div class="form-group">
+                <label asp-for="DoB"></label>
+                <span class="text-danger font-weight-bold" asp-validation-for="DoB"></span>
+                <input class="form-control" asp-for="DoB" type="date"/>
+                @* asp-for automatically makes it a DateTime, but overriding to remove time portion *@
+            </div>
+
+            <button type="submit">Add Chef</button>
+        </form>
+    </div>
+    <div class="col-md-6">
+        @* blank col to keep chef form on left half *@
+    </div>
+</div>
