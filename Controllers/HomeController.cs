@@ -64,6 +64,9 @@ namespace chefs_n_dishes.Controllers
             // If validation errors, send back to form
             if (ModelState.IsValid == false)
             {
+                // Used in form drop-down of chefs
+                ViewBag.ChefOptions = db.Chefs
+                    .ToList();
                 return View("AddDish");
             }
             dishToAdd.CreatedAt = DateTime.Now;
